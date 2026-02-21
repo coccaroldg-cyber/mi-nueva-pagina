@@ -1,0 +1,292 @@
+
+/* selector {
+    propiedad: valor:
+    propiedad: valor:
+}
+    
+*/
+
+/*desde fonts google sacamos fuentes y la refencia para usar como fuente, hay que copiar lo que esta dentro de "style" y lueg olka variable de css en el body*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/*Custom properties*/
+html {
+--bg-color-200:hsl(214, 25%, 11%);
+--bg-color-400:hsl(212, 19%, 16%);
+--bg-color-400-75:hsl(212, 19%, 16%, 75%);
+--bg-color-500:hsl(212, 19%, 25%);
+
+--text-color:hsl(215, 25%, 85%);
+
+--accent-color-200:hsl(22, 44%, 12%);
+--accent-color-400:hsl(22, 100%, 65%);
+--accent-color-500:hsl(22, 100%, 85%);
+}
+/*Selector universal*/
+* {
+    box-sizing: border-box; /* border-box es Clave para el tamño final de los elementos*/
+}
+/* Estilos generales */
+
+body{
+    background-color: var(--bg-color-200); /* Color de fondo */
+    color: var(--text-color); /*Color tipografia*/
+    font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+   line-height: 1.5; /* Alto del renglon siemrpe setearlo en 1.5*/
+   margin: 0;
+
+}
+
+
+/* Estilos para header */ 
+
+header h1 { 
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+}/*modifica el h1 dentro del header*/
+
+header {
+    background-color: var(--bg-color-400);
+    padding: 1rem 0;
+}
+
+
+/* Estilos para lanavegacion */
+header ul {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/*Links para el header*/
+header h1 a:link, 
+header h1 a:visited {
+    color: var(--accent-color-400);
+    text-decoration: none;
+}
+
+header h1 a:hover,
+header h1 a:active {
+    color: var(--accent-color-500);
+}
+
+
+
+/*Estilos para el main*/
+
+main h1 {
+    font-weight: 300; /* Grosor de linea */
+    /* font-style: italic;  Inclinacion*/
+    text-align: center; /* Alineacion de texto */
+    font-size: 2.5rem; /* Tamaño del cuerpo de la tipografia (32px predeterminado de los "h1")*/
+}
+
+
+/* Estilos para las secciones*/
+
+section {
+    width: min(62rem, 100%);
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+
+/*Seccion de bienvenida */
+#bienvenida {
+    background-image: url('../img/bienvenida.jpg');
+    background-size: cover; /* Adaptar la imagen la contenedor */
+    padding: 0;
+    height: 32rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0;
+}
+#bienvenida h1 {
+    background-color: var(--bg-color-400-75);
+    padding: 1rem 0;
+}
+
+
+
+
+
+/* Ejemplo de clase 2 */
+/* Selector de clase */
+.modelo-de-caja {
+    background-color: var(--bg-color-500);
+    width: 250px; /* ancho */
+    height: 250px; /* alto */
+    padding: 32px; /* Margen interno */ 
+    border: 8px solid var(--accent-color-400); /* Grosor - Estilo - Color*/
+    border-radius: 32px; /*Radio de las esquinas (suavizado)*/
+    box-sizing: border-box; /*hace que respete los 250px iniciales sin sumar los pixeles del padding y border*/
+  
+  margin: 64px auto 16px;
+    /*Puedo aislar los valores ej: border-bottom: 16px (habria borde solo abajo) 
+    poniendolo en "auto" permite que quede centrado (left-right) "margin: 0 auto"
+    donde 0 es arribay abajo y "auto" es izq der (X;Y)*/
+}
+
+/*Clase 3*/
+
+img h1 {
+    width: 100%; /* Al 100% se autoajusta*/
+    border: 0.5rem solid var(--accent-color-500);
+    border-radius: 2rem;
+    
+}
+
+/* Flexbox */
+.contenedor-flex {
+border: 0.15rem solid var(--accent-color-500);
+height: 32rem;
+padding: 1rem;
+display: flex;   
+/* El display viene por defecto en block, para ponerlos uno al lado del otro lo cambiamos a flex, lo hace flexible. activa flexbox */
+flex-direction: row; /*Direccion del flex, esto cambia la orientacion de los ejes principal y secundario*/
+justify-content: center; /* Controla el eje principal */
+align-items: center; /* Controla el eje Secundario */
+gap: 1rem   ; /* distancia entre elementos */
+}
+
+.item {
+    border: 0.15rem solid var(--accent-color-400);
+    padding: 1rem;
+    text-align: center;
+    width: 7rem;
+}
+
+/* Vínculos para todo el sitio */
+
+/*Reposo*/
+/*:link*/
+a:link{
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+
+/*Visitado*/
+/*:visited*/
+a:visited {
+    color: var(--text-color);
+}
+
+
+/*Hover*/
+/*:hover*/
+a:hover {
+    color: var(--accent-color-400);
+}
+
+/*Active*/
+/*:active*/
+a:active {
+    color: var(--accent-color-400);
+}
+/*On Focus*/                       
+
+
+/*Clase 4*/
+/* Resolucion del ejhercicio de novedades*/
+img {
+    width: 100%;
+}
+.contenedor-novedades {
+    display: flex;
+    gap: 1rem;  
+}
+
+.contenedor-novedades article { 
+width: 14rem;
+display: flex;
+gap: 0.5rem;
+flex-direction: column;
+justify-content: space-between;
+align-items: stretch;
+}
+
+.contenedor-novedades h2,
+.contenedor-novedades h3 {
+    margin: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.contenedor-novedades h3 {
+    font-weight: 400;
+}
+
+.contenedor-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+a.btn-outline:link, 
+a.btn-outline:visited {
+text-align: center;
+border: 0.2rem solid var(--bg-color-400-75);
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+}
+
+a.btn-outline:hover,
+a.btn-outline:active{
+background-color: var(--accent-color-500);
+}
+
+a.btn-fill:link,
+a.btn-fill:visited {
+font-size: 0.8rem;
+text-align: center;
+border: 0.2rem solid var(--bg-color-400-75);
+background-color: var(--bg-color-500);
+padding: 0.5rem 1rem;
+border-radius: 0.5rem;
+
+}
+
+a.btn-fill:hover,
+a.btn-fill:active {
+    background-color: var(--accent-color-400-75);
+
+}
+
+/* Footer */
+/* Estilos para el footer*/
+
+footer {
+    background-color: var(--bg-color-400);
+    padding: 2rem;
+}
+
+footer h1 {
+    text-align: left;
+    font-size: 1rem; /*rem es el tamaño relativo*/
+    font-weight: 600;
+}
+.contenedor-footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: coral;
+
+    width: min(62rem,);
+    margin: 0 auto;
+}
+footer nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
